@@ -9,7 +9,6 @@ export default function UsersListItem(props) {
   });
 
     const { photo, name, text, id } = props.data;
-    console.log(props.name, props.selected);
 
     if (props.selected)
     {

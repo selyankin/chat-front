@@ -5,7 +5,6 @@ import './ConversationSearch.css';
 export default function ConversationSearch(props) {
     let [ state, setState ] = useState({});
     const {val} = state;
-    console.log(val);
 
     return (
       <div className="conversation-search">

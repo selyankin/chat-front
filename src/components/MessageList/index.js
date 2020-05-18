@@ -72,8 +72,6 @@ export default function MessageList(props) {
   };
 
   function onMessageSubmit(value) {
-    console.log(value)
-    console.log(props.chatId)
     fetch('http://0.0.0.0:8080/send_message', {
             method: 'POST',
             headers: {
@@ -96,7 +94,7 @@ export default function MessageList(props) {
         <Toolbar
           title={props.conversationTitle}
           rightItems={[
-            <ToolbarButton key="info" icon="ion-ios-information-circle-outline" />,
+            <ToolbarButton key="info" icon="ion-ios-information-circle-outline" onClick={props.openInfoModal}/>,
             <ToolbarButton key="video" icon="ion-ios-videocam" />,
             <ToolbarButton key="phone" icon="ion-ios-call" />
           ]}

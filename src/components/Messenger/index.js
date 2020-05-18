@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ConversationList from '../ConversationList';
 import MessageList from '../MessageList';
 import './Messenger.css';
@@ -7,7 +7,7 @@ import UsersList from '../UsersList';
 import Modal from 'react-modal';
 
 
-const customStyles = {
+const customCreateChatStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
@@ -18,9 +18,21 @@ const customStyles = {
   }
 };
 
+const customInfoStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
+};
+
 
 export default function Messenger(props) {
-    const [modalIsOpen,setIsOpen] = React.useState(false);
+    const [createChatModalIsOpen,setCreateChatIsOpen] = React.useState(false);
+    const [infoModalIsOpen,setInfoIsOpen] = React.useState(false);
 
     const [ messages, setMessages ] = useState([]);
     const [conversationTitle, setConversationTitle] = useState('No conversation selected');
@@ -31,17 +43,28 @@ export default function Messenger(props) {
         setConversationTitle(name)
     }
 
-    function openModal() {
-        setIsOpen(true);
+    function openCreateChatModal() {
+        setCreateChatIsOpen(true);
     }
 
-    function afterOpenModal() {
+    function afterOpenCreateChatModal() {
         // references are now sync'd and can be accessed.
-        console.log("Modal is opened")
     }
 
-    function closeModal(){
-        setIsOpen(false);
+    function closeCreateChatModal(){
+        setCreateChatIsOpen(false);
+    }
+
+    function openInfoModal() {
+        setInfoIsOpen(true);
+    }
+
+    function afterOpenInfoModal() {
+        // references are now sync'd and can be accessed.
+    }
+
+    function closeInfoModal(){
+        setInfoIsOpen(false);
     }
 
     const getMessages = (id) => {
@@ -73,24 +96,38 @@ export default function Messenger(props) {
     return (
       <div className="messenger">
         <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={customStyles}
+          isOpen={createChatModalIsOpen}
+          onAfterOpen={afterOpenCreateChatModal}
+          onRequestClose={closeCreateChatModal}
+          style={customCreateChatStyles}
           contentLabel="Example Modal"
         >
             <h2>Создать чат</h2>
-              <button onClick={closeModal}>close</button>
+              <button onClick={closeCreateChatModal}>close</button>
+
                 <UsersList/>
 
 
         </Modal>
+
+          <Modal
+              isOpen={infoModalIsOpen}
+              onAfterOpen={afterOpenInfoModal}
+              onRequestClose={closeInfoModal}
+              style={customInfoStyles}
+              contentLabel="Example Modal"
+          >
+              <h2>Создать чат</h2>
+              <button onClick={closeCreateChatModal}>close</button>
+
+
+          </Modal>
         <div className="scrollable sidebar">
-          <ConversationList onclick={onClick} openCreateDialogue={openModal}/>
+          <ConversationList onclick={onClick} openCreateDialogue={openCreateChatModal}/>
         </div>
 
         <div className="scrollable content">
-          <MessageList chatId={chatId} conversationTitle={conversationTitle} messages={messages} />
+          <MessageList openInfoModal={openInfoModal} chatId={chatId} conversationTitle={conversationTitle} messages={messages} />
         </div>
       </div>
     );

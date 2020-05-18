@@ -5,7 +5,6 @@ import './UsersSearch.css';
 export default function UsersSearch(props) {
     let [ state, setState ] = useState({});
     const {val} = state;
-    console.log(val);
 
     return (
       <div className="conversation-search">

@@ -14,7 +14,6 @@ export default function Login() {
   }
 
   function handleSubmit(event) {
-      console.log(login, password);
       fetch('http://0.0.0.0:8080/login', {
             method: 'POST',
             headers: {
@@ -25,7 +24,6 @@ export default function Login() {
 
         }).then(r => {return r.json()})
             .then(data => {
-              console.log(data);
               localStorage.setItem("USER_ID", data.id);
               localStorage.setItem("USER_LOGIN", data.login);
               localStorage.setItem("USER_TOKEN", data.token);
