@@ -2,12 +2,11 @@
   display: grid;
   width: 100%;
   height: 100vh;
-  background: #eeeef1;
+  background: #222f3f;
 
   grid-template-columns: 350px auto;
   grid-template-rows: 60px auto 60px;
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
+
 }
 
 .container {
@@ -18,21 +17,66 @@
   position: relative;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+
 }
 
 .sidebar {
-  background: white;
   grid-row-start: 1;
   grid-row-end: span 3;
+  background-color: #222f3f;
+  color:white;
 }
 
 .content {
-  background: white;
   grid-row-start: 1;
   grid-row-end: span 3;
+  background-color: #18222c;
+}
+
+.ReactModal__Overlay{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.content .toolbar{
+  background-color: #18222c;
 }
 
 .footer {
   grid-column-start: 2;
   background: white;
+}
+
+.sidebar{
+
+}
+.toolbar{
+  background-color: #222f3f;
+  color: white;
+}
+
+::-webkit-scrollbar { /* 1 - скроллбар */
+  width: 4px;
+  height: 4px;
+  background: #222f3f;
+}
+
+::-webkit-scrollbar-button { /* 2 - кнопка */
+
+}
+
+::-webkit-scrollbar-track { /* 3 - трек */
+}
+
+::-webkit-scrollbar-track-piece { /* 4 - видимая часть трека */
+}
+
+::-webkit-scrollbar-thumb { /* 5 - ползунок */
+  border-radius: 2px;
+  background-color: #d1d1d1;
+}
+
+::-webkit-scrollbar-corner { /* 6 - уголок */
+}
+
+::-webkit-resizer { /* 7 - изменение размеров */
 }

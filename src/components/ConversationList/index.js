@@ -3,6 +3,7 @@ import ConversationSearch from '../ConversationSearch';
 import ConversationListItem from '../ConversationListItem';
 import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
+import md5 from "react-native-md5";
 
 import './ConversationList.css';
 
@@ -26,7 +27,7 @@ export default function ConversationList(props) {
             .then(data => {
                 let newConversations = data.map(result => {
                 return {
-                    photo: 'https://i.pinimg.com/originals/a7/01/bb/a701bb04275ece742ff1bd420d00cb9a.png',
+                    photo: `https://www.gravatar.com/avatar/${md5.hex_md5(result.name)}?s=100g&d=identicon&r=PG`,
                     name: `${result.name}`,
                     text: 'Хэй, там давыд слился',
                     id: result.id
@@ -40,10 +41,7 @@ export default function ConversationList(props) {
         return (
             <div className="conversation-list">
                 <Toolbar
-                    title="Messenger"
-                    leftItems={[
-                        <ToolbarButton key="cog" icon="ion-ios-cog"/>
-                    ]}
+                    title="POZHILOY CHAT"
                     rightItems={[
                         <ToolbarButton key="add" icon="ion-ios-add-circle-outline" onClick={props.openCreateDialogue}/>
                     ]}

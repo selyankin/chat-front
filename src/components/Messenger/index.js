@@ -9,12 +9,17 @@ import Modal from 'react-modal';
 
 const customCreateChatStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
+    top                   : '50vh',
+    left                  : '50vw',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    borderRadius          : '10px',
+    border                : 'none',
+      color:'white',
+      backgroundColor:'#222f3f',
+      padding:'20px'
   }
 };
 
@@ -30,13 +35,29 @@ const customInfoStyles = {
 };
 
 
+const connection = new WebSocket('ws://0.0.0.0:8080/ws', localStorage.getItem("USER_TOKEN"));
+
 export default function Messenger(props) {
     const [createChatModalIsOpen,setCreateChatIsOpen] = React.useState(false);
     const [infoModalIsOpen,setInfoIsOpen] = React.useState(false);
-
     const [ messages, setMessages ] = useState([]);
-    const [conversationTitle, setConversationTitle] = useState('No conversation selected');
+    const [conversationTitle, setConversationTitle] = useState('Select conversation');
     const [chatId, setChatId] = useState('');
+    const [wsMessages, setWsMessages] = useState([]);
+
+
+    connection.onmessage = evt => {
+        setWsMessages(wsMessages.concat([evt.data]))
+    };
+    
+    function sendNewWsMessage(chat_id, text) {
+        console.log(chat_id, text);
+        connection.send(JSON.stringify({dest_chat_id: chat_id, text: text}))
+
+    }
+
+
+
     function onClick(id, name) {
         getMessages(id);
         setChatId(id);
@@ -102,7 +123,7 @@ export default function Messenger(props) {
           style={customCreateChatStyles}
           contentLabel="Example Modal"
         >
-            <h2>Создать чат</h2>
+            <h2 style={{margin:'0 0 20px 0'}}>Create chat</h2>
               <button onClick={closeCreateChatModal}>close</button>
 
                 <UsersList/>
@@ -118,7 +139,7 @@ export default function Messenger(props) {
               contentLabel="Example Modal"
           >
               <h2>Создать чат</h2>
-              <button onClick={closeCreateChatModal}>close</button>
+              <button onClick={closeCreateChatModal} >close</button>
 
 
           </Modal>
@@ -127,7 +148,7 @@ export default function Messenger(props) {
         </div>
 
         <div className="scrollable content">
-          <MessageList openInfoModal={openInfoModal} chatId={chatId} conversationTitle={conversationTitle} messages={messages} />
+          <MessageList openInfoModal={openInfoModal} chatId={chatId} conversationTitle={conversationTitle} messages={messages} sendNewWsMessage={sendNewWsMessage}/>
         </div>
       </div>
     );

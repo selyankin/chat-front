@@ -13,7 +13,7 @@ export default function UsersSearch(props) {
             onChange={ (e) => props.onchange(e.target.value) }
           type="search"
           className="conversation-search-input"
-          placeholder="Search Messages"
+          placeholder="Find users"
         />
       </div>
     );

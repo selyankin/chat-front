@@ -6,6 +6,8 @@ import md5 from "react-native-md5";
 
 import './UsersList.css';
 
+
+
 export default function UsersList(props) {
     const [users, setUsers] = useState([]);
     const [selectedUsers, setSelectedUsers] = useState([]);
@@ -16,6 +18,14 @@ export default function UsersList(props) {
     }, []);
 
 
+    const fullSizeButton = {
+        width : '100%',
+        margin: '0 0 15px 0',
+        border: 'none',
+        borderRadius: '10px',
+        padding: '7px 0',
+        fontSize: '12pt'
+    };
 
     const updateList = () =>  {
         let usersTemp = [...users];
@@ -117,7 +127,7 @@ export default function UsersList(props) {
                     }
                 </div>
                 <div className="send-users-btn">
-                    <button onClick={createChat}>Create chat</button>
+                    <button onClick={createChat}  style={fullSizeButton}>Create chat</button>
                 </div>
             </div>
         );

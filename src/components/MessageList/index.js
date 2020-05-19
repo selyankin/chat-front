@@ -39,7 +39,7 @@ export default function MessageList(props) {
           startsSequence = false;
         }
 
-        if (previousDuration.as('hours') < 1) {
+        if (previousDuration.as('days') < 1) {
           showTimestamp = false;
         }
       }
@@ -85,30 +85,28 @@ export default function MessageList(props) {
             .then(data => {
                 console.log(data)
             });
+
+    props.sendNewWsMessage(props.chatId, value);
+
     msgInputRef.current.value = null
 
   }
-
+    const Priv = {
+        width:'100px'
+    }
     return(
       <div className="message-list">
         <Toolbar
           title={props.conversationTitle}
           rightItems={[
-            <ToolbarButton key="info" icon="ion-ios-information-circle-outline" onClick={props.openInfoModal}/>,
-            <ToolbarButton key="video" icon="ion-ios-videocam" />,
-            <ToolbarButton key="phone" icon="ion-ios-call" />
+            <ToolbarButton key="info" icon="ion-ios-information-circle-outline" onClick={props.openInfoModal}/>
           ]}
         />
 
         <div className="message-list-container">{renderMessages()}</div>
 
         <Compose inputRef={msgInputRef} onMessageSubmit={onMessageSubmit} rightItems={[
-          <ToolbarButton key="photo" icon="ion-ios-camera" />,
-          <ToolbarButton key="image" icon="ion-ios-image" />,
-          <ToolbarButton key="audio" icon="ion-ios-mic" />,
-          <ToolbarButton key="money" icon="ion-ios-card" />,
-          <ToolbarButton key="games" icon="ion-logo-game-controller-b" />,
-          <ToolbarButton key="emoji" icon="ion-ios-happy" />
+          <ToolbarButton style={Priv} key="photo" icon="ion-ios-arrow-dropright-circle" />
         ]}/>
       </div>
     );

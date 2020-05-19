@@ -2,11 +2,10 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  background: white;
-  border-top: 1px solid #eeeef1;
   position: fixed;
-  width: calc(100% - 20px);
+  width: calc(100% - 375px);
   bottom: 0px;
+  background: #18222c;
 }
 
 @supports (backdrop-filter: blur(20px)) {
@@ -22,15 +21,19 @@
   border: none;
   font-size: 14px;
   height: 40px;
-  background: none;
+  background: #222f3f;
+  padding-left:20px ;
+  border-radius: 20px;
+  margin-right: -5px;
+  color:white;
 }
 
 .compose-input::placeholder {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .compose .toolbar-button {
-  color: #bbbbbf;
+  color: #319eed;
   margin-left: 15px;
 }
 

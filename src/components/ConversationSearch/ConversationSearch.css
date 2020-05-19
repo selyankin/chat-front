@@ -1,13 +1,15 @@
 .conversation-search {
-  padding: 10px;
+  padding: 0px 10px 7px 10px !important;
   display: flex;
   flex-direction: column;
+  background-color: #222f3f;
 }
 
 .conversation-search-input {
-  background: #f4f4f8;
-  padding: 8px 10px;
-  border-radius: 10px;
+  background: #18222c !important;
+  padding: 8px 20px !important;
+  color:white !important;
+  border-radius: 20px !important;
   border: none;
   font-size: 14px;
 }

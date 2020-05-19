@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3615b48e-753f-4cfe-b77f-0db32df9a98d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Compose/Compose.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Compose/Compose.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ConversationList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ConversationListItem/ConversationListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationListItem/ConversationListItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ConversationSearch/ConversationSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationSearch/ConversationSearch.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConversationSearch/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationSearch/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Message/Message.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MessageList/MessageList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageList/MessageList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MessageList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ToolbarButton/ToolbarButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ToolbarButton/ToolbarButton.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UsersListItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersListItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UsersSearch/UsersSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersSearch/UsersSearch.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersSearch/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersSearch/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,7 +84,9 @@
       <workItem from="1589652648519" duration="17413000" />
       <workItem from="1589703295636" duration="1405000" />
       <workItem from="1589724977628" duration="17018000" />
-      <workItem from="1589818423312" duration="5945000" />
+      <workItem from="1589818423312" duration="22213000" />
+      <workItem from="1589844872562" duration="88000" />
+      <workItem from="1589904360712" duration="3517000" />
     </task>
     <servers />
   </component>
@@ -89,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
