@@ -1,19 +1,12 @@
 .compose {
-  padding: 10px;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
   position: fixed;
-  width: calc(100% - 375px);
-  bottom: 0px;
-  background: #18222c;
-}
+  width: calc(100% - 370px);
 
-@supports (backdrop-filter: blur(20px)) {
-  .compose {
-    border: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-  }
+  bottom: 0px;
+  background: #000000;
 }
 
 .compose-input {
@@ -21,22 +14,20 @@
   border: none;
   font-size: 14px;
   height: 40px;
-  background: #222f3f;
-  padding-left:20px ;
-  border-radius: 20px;
+  background: rgba(39, 39, 39, 0);
   margin-right: -5px;
   color:white;
+  overflow-y: scroll;
+  border-bottom: 2px solid white;
 }
 
+.compose-input:active{
+  background-color: rgba(39, 39, 39, 0);}
+
 .compose-input::placeholder {
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .compose .toolbar-button {
-  color: #319eed;
   margin-left: 15px;
-}
-
-.compose .toolbar-button:hover {
-  color: #99999c;
 }

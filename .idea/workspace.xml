@@ -2,22 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3615b48e-753f-4cfe-b77f-0db32df9a98d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Register/Register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Register/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Compose/Compose.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Compose/Compose.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Compose/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Compose/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ConversationList/ConversationList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationList/ConversationList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConversationList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationList/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConversationListItem/ConversationListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationListItem/ConversationListItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConversationSearch/ConversationSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationSearch/ConversationSearch.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ConversationSearch/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConversationSearch/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Message/Message.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MessageList/MessageList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageList/MessageList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MessageList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageList/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ToolbarButton/ToolbarButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ToolbarButton/ToolbarButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UsersList/UsersList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList/UsersList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UsersListItem/UsersListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersListItem/UsersListItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UsersListItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersListItem/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersSearch/UsersSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersSearch/UsersSearch.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UsersSearch/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersSearch/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +66,11 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/UsersList" />
     </key>
@@ -71,6 +87,9 @@
       </list>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -86,7 +105,21 @@
       <workItem from="1589724977628" duration="17018000" />
       <workItem from="1589818423312" duration="22213000" />
       <workItem from="1589844872562" duration="88000" />
-      <workItem from="1589904360712" duration="3517000" />
+      <workItem from="1589904360712" duration="4868000" />
+      <workItem from="1589920954087" duration="6458000" />
+      <workItem from="1590273242326" duration="613000" />
+      <workItem from="1590837703561" duration="864000" />
+      <workItem from="1590838596568" duration="37000" />
+      <workItem from="1591719695920" duration="36580000" />
+      <workItem from="1591805733232" duration="9374000" />
+      <workItem from="1591823518329" duration="18123000" />
+      <workItem from="1591893532137" duration="21382000" />
+      <workItem from="1591942442119" duration="3524000" />
+      <workItem from="1592041592982" duration="5320000" />
+      <workItem from="1592072373760" duration="14103000" />
+      <workItem from="1592117953368" duration="8263000" />
+      <workItem from="1592167959840" duration="637000" />
+      <workItem from="1592418050878" duration="2815000" />
     </task>
     <servers />
   </component>
@@ -101,6 +134,20 @@
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>

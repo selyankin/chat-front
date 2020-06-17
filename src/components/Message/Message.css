@@ -6,11 +6,23 @@
 .message .timestamp {
   display: flex;
   justify-content: center;
-  color: #999;
+  color: #c6c6c6;
   font-weight: 600;
   font-size: 12px;
   margin: 10px 0px;
   text-transform: uppercase;
+}
+
+.fefe{
+  word-wrap: break-word;
+  width: calc(100% - 40px);
+}
+
+.bubble{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+    line-height: 1.5;
 }
 
 .message .bubble-container {
@@ -43,12 +55,12 @@
 }
 
 .message .bubble-container .bubble {
-  margin: 1px 0px;
-  background: #222f3f;
+  margin: 2px 0px;
+  background: #141414;
   color: white;
-  padding: 10px 15px;
+  padding: 10px 19px;
   border-radius: 20px;
-  max-width: 75%;
+  max-width: 70%;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
   border-top-right-radius: 20px;
@@ -56,10 +68,18 @@
 }
 
 .message.mine .bubble-container .bubble {
-  background: #3b6a96;
+  background: #333333;
   color: white;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+.messageTime{
+  text-align: right;
+  margin-left: 10px;
+  width: 30px;
+  color: #858585;
+  font-size: 13px;
 }

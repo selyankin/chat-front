@@ -1,10 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react';
-import UsersSearch from '../UsersSearch';
+import UsersSearch from '../UsersSearchNEW';
 import UsersListItem from '../UsersListItem';
 import md5 from "react-native-md5";
 
 
 import './UsersList.css';
+import {store} from "react-notifications-component";
 
 
 
@@ -16,16 +17,6 @@ export default function UsersList(props) {
     useEffect(() => {
         getUsers("")
     }, []);
-
-
-    const fullSizeButton = {
-        width : '100%',
-        margin: '0 0 15px 0',
-        border: 'none',
-        borderRadius: '10px',
-        padding: '7px 0',
-        fontSize: '12pt'
-    };
 
     const updateList = () =>  {
         let usersTemp = [...users];
@@ -39,30 +30,72 @@ export default function UsersList(props) {
     useEffect(updateList, [selectedUsers]);
 
     const createChat = () => {
-        fetch('http://0.0.0.0:8080/create_chat', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'X-Auth-Token': localStorage.getItem("USER_TOKEN")
-            },
-            body: JSON.stringify({name: chatName.current.value, user_ids: selectedUsers.map(e => e.id)}),
+        if(chatName.current.value.length < 3 || chatName.current.value.length > 18) {
+            store.addNotification({
+                title: 'Warning!',
+                message: 'chat name must contain between 3 and 18 characters',
+                type: "warning",
+                insert: "bottom",
+                container: "top-right",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                    pauseOnHover: true
+                }
+            });
+            return;
+        };
+        if(selectedUsers.length === 0) {
+            store.addNotification({
+                title: 'Warning!',
+                message: 'Add users',
+                type: "warning",
+                insert: "bottom",
+                container: "top-right",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true,
+                    pauseOnHover: true
+                }
+            });
+            return;
+        }
+        else {
+            fetch('http://0.0.0.0:8080/create_chat', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Auth-Token': localStorage.getItem("USER_TOKEN"),
+                },
+                body: JSON.stringify({name: chatName.current.value, user_ids: selectedUsers.map(e => e.id)}),
 
-        }).then(r => {return r.json()})
-            .then(data => {
-                let newUsers = data.map(result => {
-                    return {
-                        photo: `https://www.gravatar.com/avatar/${md5.hex_md5(result.login)}?s=100g&d=identicon&r=PG`,
-                        name: `${result.name}`,
-                        text: `@${result.login}`,
-                        id: result.id
-                    };
+            }).then(r => {return r.json()})
+                .then(data => {
+
+
+                store.addNotification({
+                    message: 'Chat created',
+                    type: "success",
+                    insert: "bottom",
+                    container: "top-right",
+                    animationIn: ["animated", "fadeIn"],
+                    animationOut: ["animated", "fadeOut"],
+                    dismiss: {
+                        duration: 2000,
+                        onScreen: true,
+                        pauseOnHover: false
+                    }
                 });
-                setUsers([]);
-                let selUsersTemp = [...selectedUsers];
-                selUsersTemp.forEach( u => u.selected = true);
-                setUsers(selUsersTemp.concat(newUsers.filter(e => !selectedUsers.map(t => t.id).includes( e.id))))
+                props.closeModal();
+                props.selectChat(data.id,data.name);
+                return;
             })
+        }
     };
 
     const getUsers = (query) => {
@@ -80,6 +113,7 @@ export default function UsersList(props) {
 
         }).then(r => {return r.json()})
             .then(data => {
+                console.log(data);
                 let newUsers = data.map(result => {
                 return {
                     photo: `https://www.gravatar.com/avatar/${md5.hex_md5(result.login)}?s=100g&d=identicon&r=PG`,
@@ -106,15 +140,17 @@ export default function UsersList(props) {
         return (
             <div>
                 <div>
+                    <p className={'textForm'}>Chat name:</p>
                     <input
                         ref={chatName}
                         type="search"
-                        className="conversation-search-input"
+                        className="conversation-search-input-n"
                         placeholder="Chat name"
                     />
                 </div>
-                <div className="conversation-list">
-                    <UsersSearch onchange={getUsers} usersInput={usersInput}/>
+                <p className={'textForm'}>Find users:</p>
+                <UsersSearch onchange={getUsers} usersInput={usersInput}/>
+                <div className="conversation-list-n">
                     {
                         users.map(user =>
                             <UsersListItem
@@ -126,9 +162,7 @@ export default function UsersList(props) {
                         )
                     }
                 </div>
-                <div className="send-users-btn">
-                    <button onClick={createChat}  style={fullSizeButton}>Create chat</button>
-                </div>
+                <button onClick={createChat} className="send-users-btn">Create</button>
             </div>
         );
 }

@@ -2,14 +2,13 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  width: calc(100% - 25px);
+  width: calc(100% - 20px);
+  transition: 0.5s;
 }
 
 .conversation-list-item:hover {
-  background: #2d3a4e !important;
+  background: #272727;
   cursor: pointer;
-  border-radius: 0 40px 40px 0;
-
 }
 
 .conversation-photo {
@@ -23,7 +22,6 @@
 .conversation-title {
   font-size: 14px;
   font-weight: bold;
-  text-transform: capitalize;
   margin: 0;
 }
 

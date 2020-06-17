@@ -11,7 +11,8 @@ export default function Message(props) {
       showTimestamp
     } = props;
 
-    const friendlyTimestamp = moment(data.timestamp).format('LLLL');
+    const friendlyTimestamp = moment(data.timestamp).format('d MMMM y');
+    const friendlyTimestam = moment(data.timestamp).format('HH:mm');
     return (
       <div className={[
         'message',
@@ -27,8 +28,13 @@ export default function Message(props) {
         }
 
         <div className="bubble-container">
-          <div className="bubble" title={friendlyTimestamp}>
+          <div className="bubble">
+              <div className={'fefe'}>
             { data.message }
+              </div>
+              <div className="messageTime">
+              {friendlyTimestam}
+              </div>
           </div>
         </div>
       </div>

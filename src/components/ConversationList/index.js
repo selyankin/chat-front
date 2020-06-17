@@ -7,11 +7,13 @@ import md5 from "react-native-md5";
 
 import './ConversationList.css';
 
+
+
 export default function ConversationList(props) {
     let [conversations, setConversations] = useState([]);
     useEffect(() => {
         getConversations("")
-    }, []);
+    }, [props.ab]);
 
     const getConversations = (query) => {
         fetch('http://0.0.0.0:8080/chat_list', {
@@ -29,11 +31,16 @@ export default function ConversationList(props) {
                 return {
                     photo: `https://www.gravatar.com/avatar/${md5.hex_md5(result.name)}?s=100g&d=identicon&r=PG`,
                     name: `${result.name}`,
-                    text: 'Хэй, там давыд слился',
+                    text: `${result.last_message_text}`,
+                    date: new Date(result.last_message_date),
                     id: result.id
                 };
             });
+            newConversations.sort(( a, b ) => {
+                return b.date - a.date
+            })
             conversations = [];
+
             setConversations([...newConversations])
             })
     };
@@ -41,21 +48,27 @@ export default function ConversationList(props) {
         return (
             <div className="conversation-list">
                 <Toolbar
-                    title="POZHILOY CHAT"
+                    positionOaoa={' '}
+                    leftItems={[
+                        <i className={`toolbar-button ion-ios-arrow-round-back`} onClick={props.openSidebar} />
+                    ]}
+                    title="GoEv"
                     rightItems={[
                         <ToolbarButton key="add" icon="ion-ios-add-circle-outline" onClick={props.openCreateDialogue}/>
                     ]}
                 />
                 <ConversationSearch onchange={getConversations}/>
+                <div className="scrollable-element">
                 {
                     conversations.map(conversation =>
                         <ConversationListItem
                             onclick={props.onclick}
-                            key={conversation.name}
+                            key={conversation.id}
                             data={conversation}
                         />
                     )
                 }
+                </div>
             </div>
         );
 }
